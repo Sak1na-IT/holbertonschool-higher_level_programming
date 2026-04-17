@@ -4,21 +4,23 @@ asdfghjkl
 """
 
 
-class Student:
+def pascal_triangle(n):
     """
     asdfghjkl
     """
+    if n <= 0:
+        return []
 
-    def __init__(self, first_name, last_name, age):
-        """
-        asdfghjkl
-        """
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
+    triangle = [[1]]
 
-    def to_json(self):
-        """
-        asdfghjkl
-        """
-        return self.__dict__
+    while len(triangle) < n:
+        prev_row = triangle[-1]
+        new_row = [1]
+        
+        for i in range(len(prev_row) - 1):
+            new_row.append(prev_row[i] + prev_row[i + 1])
+        
+        new_row.append(1)
+        triangle.append(new_row)
+
+    return triangle
