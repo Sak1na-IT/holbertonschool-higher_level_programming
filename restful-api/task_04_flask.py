@@ -1,8 +1,3 @@
-Bütün kodlardakı şərhləri təmizlədim, yalnız tələb olunan funksional kodları və "asdfghjkl" docstring-lərini saxladım.
-
-### `task_04_flask.py`
-
-```python
 #!/usr/bin/python3
 """
 flask
@@ -75,4 +70,4 @@ def add_user():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
