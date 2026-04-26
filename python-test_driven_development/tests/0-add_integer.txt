@@ -1,6 +1,8 @@
-===============================
-Test for add_integer function
-===============================
+================================
+Test for add_integer
+================================
+
+>>> from 0-add_integer import add_integer
 
 Normal integers
 ---------------
@@ -12,8 +14,8 @@ Negative numbers
 >>> add_integer(100, -2)
 98
 
-Default argument (b = 98)
--------------------------
+Default argument
+----------------
 >>> add_integer(2)
 100
 
@@ -27,14 +29,14 @@ Only floats
 >>> add_integer(4.5, 2.3)
 6
 
-Error: string as second argument
---------------------------------
+Error: string
+--------------
 >>> add_integer(4, "School")
 Traceback (most recent call last):
 TypeError: b must be an integer
 
-Error: None as argument
-----------------------
+Error: None
+-----------
 >>> add_integer(None)
 Traceback (most recent call last):
 TypeError: a must be an integer
