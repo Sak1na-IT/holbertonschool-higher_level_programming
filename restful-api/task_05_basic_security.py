@@ -36,7 +36,7 @@ def verify_password(username, password):
 @app.route('/basic-protected', methods=['GET'])
 @auth.login_required
 def basic_protected():
-    return jsonify({"message": "Basic Auth: Access Granted"}), 200
+    return "Basic Auth: Access Granted", 200
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -62,7 +62,7 @@ def login():
 @app.route('/jwt-protected', methods=['GET'])
 @jwt_required()
 def jwt_protected():
-    return jsonify({"message": "JWT Auth: Access Granted"}), 200
+    return "JWT Auth: Access Granted", 200
 
 @app.route('/admin-only', methods=['GET'])
 @jwt_required()
@@ -72,7 +72,7 @@ def admin_only():
     if user["role"] != "admin":
         return jsonify({"error": "Admin access required"}), 403
 
-    return jsonify({"message": "Admin Access: Granted"}), 200
+    return "Admin Access: Granted", 200
 
 @jwt.unauthorized_loader
 def handle_missing_token(err):
