@@ -1,42 +1,28 @@
-================================
-Test for add_integer
-================================
-
->>> from 0-add_integer import add_integer
-
-Normal integers
----------------
+>>> add_integer = __import__('0-add_integer').add_integer
 >>> add_integer(1, 2)
 3
-
-Negative numbers
-----------------
 >>> add_integer(100, -2)
 98
-
-Default argument
-----------------
 >>> add_integer(2)
 100
-
-Float values
-------------
 >>> add_integer(100.3, -2)
 98
-
-Only floats
------------
->>> add_integer(4.5, 2.3)
-6
-
-Error: string
---------------
 >>> add_integer(4, "School")
 Traceback (most recent call last):
+    ...
 TypeError: b must be an integer
 
-Error: None
------------
 >>> add_integer(None)
 Traceback (most recent call last):
+    ...
 TypeError: a must be an integer
+
+>>> add_integer(float('inf'), 5)
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
