@@ -2,24 +2,15 @@
 """Module that divides all elements of a matrix"""
 
 
-def matrix_divided(matrix, div):
-    """Divide all elements of a matrix by div.
+def say_my_name(first_name, last_name=""):
     """
-    msg = "matrix must be a matrix (list of lists) of integers/floats"
-    if (not isinstance(matrix, list) or matrix == [] or
-            not all(isinstance(row, list) for row in matrix) or
-            not all(len(row) > 0 for row in matrix) or
-            not all(isinstance(ele, (int, float))
-                    for row in matrix for ele in row)):
-        raise TypeError(msg)
+    Prints My name is <first name> <last name>
+    """
 
-    if not all(len(row) == len(matrix[0]) for row in matrix):
-        raise TypeError("Each row of the matrix must have the same size")
+    if type(first_name) is not str:
+        raise TypeError("first_name must be a string")
 
-    if not isinstance(div, (int, float)):
-        raise TypeError("div must be a number")
+    if type(last_name) is not str:
+        raise TypeError("last_name must be a string")
 
-    if div == 0:
-        raise ZeroDivisionError("division by zero")
-
-    return [list(map(lambda x: round(x / div, 2), row)) for row in matrix]
+    print("My name is {} {}.".format(first_name, last_name))
