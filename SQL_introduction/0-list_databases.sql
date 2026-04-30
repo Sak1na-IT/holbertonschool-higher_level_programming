@@ -1,2 +1,2 @@
-^--heloworld
+-- heloworld
 SHOW DATABASES;
